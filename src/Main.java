@@ -23,25 +23,21 @@ public class Main {
 
             if (parser.parseValue(firstValue) != Consts.VALUE_FORMAT_ERROR) {
                 firstNum = new ArabicNumber();
+                secondNum = new ArabicNumber();
             } else {
                 firstNum = new RomanNumber();
+                secondNum = new RomanNumber();
             }
             if (firstNum.setValue(firstValue) == Consts.VALUE_FORMAT_ERROR) {
                 System.out.println("СТРОКА НЕ ВАЛИДНА");
                 continue;
-            }
-
-            if (parser.parseValue(secondValue) != Consts.VALUE_FORMAT_ERROR) {
-                secondNum = new ArabicNumber();
-            } else {
-                secondNum = new RomanNumber();
             }
             if (secondNum.setValue(secondValue) == Consts.VALUE_FORMAT_ERROR) {
                 System.out.println("СТРОКА НЕ ВАЛИДНА");
                 continue;
             }
 
-            System.out.println("Результат" + firstNum.calc(secondNum, parser.getOperation()));
+            System.out.println("Результат: " + firstNum.calc(secondNum, parser.getOperation()));
             break;
         }
     }

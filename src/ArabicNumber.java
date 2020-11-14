@@ -19,12 +19,13 @@ class ArabicNumber extends Number {
     }
 
     @Override
-    public int calc(Number o, Operations operation) {
-        return switch (operation) {
+    public String calc(Number o, Operations operation) {
+        int res = switch (operation) {
             case ADDITION -> this.numericValue + o.getNumericValue();
             case SUBTRACTION -> this.numericValue - o.getNumericValue();
             case MULTIPLICATION -> this.numericValue * o.getNumericValue();
             case DIVISION -> this.numericValue / o.getNumericValue();
         };
+        return Integer.toString(res);
     }
 }

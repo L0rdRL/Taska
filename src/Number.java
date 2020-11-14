@@ -11,5 +11,5 @@ class Number {
         return this.numericValue;
     }
 
-    public int calc(Number o, Operations operation) { return 0;}
+    public String calc(Number o, Operations operation) { return "" ;}
 }
